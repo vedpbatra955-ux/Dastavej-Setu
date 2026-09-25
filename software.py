@@ -73,10 +73,13 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# --- STYLING ---
+# --- PREMIUM STYLING & UI ENHANCEMENTS ---
 st.markdown("""
     <style>
+    /* Background Color */
     .stApp { background-color: #F4F6F7; }
+    
+    /* Enhanced Main Header */
     .main-header {
         background: linear-gradient(135deg, #6b0f0f 0%, #3d0707 100%);
         padding: 40px 20px;
@@ -90,7 +93,11 @@ st.markdown("""
     .org-title { font-size: 18px; letter-spacing: 3px; font-weight: 700; color: #E0E0E0; text-transform: uppercase; margin-bottom: 8px; }
     .main-title { color: #F39C12; font-size: 58px; font-weight: 900; margin: 0; text-shadow: 3px 3px 6px rgba(0,0,0,0.4); letter-spacing: 2px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     .portal-subtitle { font-size: 16px; color: #FADBD8; margin-top: 10px; font-weight: 500; font-style: italic; }
+    
+    /* Section Headings */
     h2 { color: #7A1212 !important; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; border-bottom: 3px solid #F39C12; padding-bottom: 10px; margin-top: 40px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+    
+    /* Premium Expanders */
     [data-testid="stExpander"] {
         background-color: #FFFFFF !important;
         border: 1px solid #E0E0E0 !important;
@@ -117,6 +124,8 @@ st.markdown("""
         fill: #7A1212 !important;
         color: #7A1212 !important;
     }
+
+    /* Fixed Footer */
     .footer { position: fixed; left: 0; bottom: 0; width: 100%; background: linear-gradient(135deg, #1B2631 0%, #2C3E50 100%); color: #FADBD8; text-align: center; padding: 15px; font-size: 14px; font-weight: 500; letter-spacing: 0.5px; z-index: 100; box-shadow: 0 -4px 15px rgba(0,0,0,0.2); }
     </style>
 """, unsafe_allow_html=True)
@@ -130,12 +139,12 @@ if st.sidebar.button("🧹 Clear Workspace & Cache", width="stretch"):
     st.rerun()
 
 st.sidebar.markdown("<br><br><br><br>", unsafe_allow_html=True)
-st.sidebar.caption("v3.12 Cloud Build")
+st.sidebar.caption("v3.13 Cloud Build (Bugfix)")
 
 # --- HEADER & LIVE SEARCH ---
 st.markdown("""
     <div class="main-header">
-        <div class="org-title">DOCUMENT-SETU</div>
+        <div class="org-title">Rajya Sabha Secretariat</div>
         <div class="main-title">दस्तावेज़ सेतु</div>
         <div class="portal-subtitle">Secure Intranet Document Utility & Conversion Portal</div>
     </div>
@@ -1297,9 +1306,9 @@ if any([t41, t42, t43, t44, t45, t46, t47, t54]):
                 doc = docx.Document()
                 style = doc.styles['Normal']
                 style.font.name = 'Arial'
-                style.font.size = Pt(10)
-                style.paragraph_format.space_after = Pt(3)
-                style.paragraph_format.line_spacing = 1.05
+                style.font.size = Pt(11)
+                style.paragraph_format.space_after = Pt(6)
+                style.paragraph_format.line_spacing = 1.15
 
                 for s in doc.sections:
                     s.page_width, s.page_height = Mm(210), Mm(297)
@@ -1307,14 +1316,14 @@ if any([t41, t42, t43, t44, t45, t46, t47, t54]):
 
                 p_hdr = doc.add_paragraph()
                 p_hdr.alignment = WD_ALIGN_PARAGRAPH.CENTER
-                p_hdr.paragraph_format.space_after = Pt(4)
+                p_hdr.paragraph_format.space_after = Pt(8)
                 r_h1 = p_hdr.add_run("APPLICATION FOR GRANT OF PERMISSION FOR DIAGNOSTIC TESTS/MEDICAL TREATMENT\n")
-                r_h1.bold = True; r_h1.font.size = Pt(11)
+                r_h1.bold = True; r_h1.font.size = Pt(12)
                 r_h2 = p_hdr.add_run("[Test/Treatment is to be taken by the official after getting written permission from the Office]")
-                r_h2.font.size = Pt(9)
+                r_h2.font.size = Pt(10)
 
                 p1 = doc.add_paragraph()
-                p1.add_run("1. Name of the Employee (in capital letters): Shri/Smt./Km.. ")
+                p1.add_run("1. Name of the Employee (in capital letters): ")
                 p1.add_run(f"{med_sal} {med_emp_name.upper()}").bold = True
                 
                 doc.add_paragraph(f"2. Designation: {med_desig}")
