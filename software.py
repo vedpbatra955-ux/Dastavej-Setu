@@ -135,7 +135,7 @@ st.sidebar.caption("v3.12 Cloud Build")
 # --- HEADER & LIVE SEARCH ---
 st.markdown("""
     <div class="main-header">
-        <div class="org-title">Rajya Sabha Secretariat</div>
+        <div class="org-title">DOCUMENT-SETU</div>
         <div class="main-title">दस्तावेज़ सेतु</div>
         <div class="portal-subtitle">Secure Intranet Document Utility & Conversion Portal</div>
     </div>
