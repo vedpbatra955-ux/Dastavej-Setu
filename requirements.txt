@@ -1,0 +1,12 @@
+streamlit
+pypdf
+Pillow
+python-docx
+reportlab
+docx2pdf
+pdf2docx
+rembg
+PyMuPDF
+pytesseract
+pdf2image
+EbookLib
